@@ -1,0 +1,18 @@
+12:33:01.798 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  C:\Users\paxpi\AppData\Local\JetBrains\IdeaIC2024.1\temp-testng-customsuite.xml
+
+12:33:01.885 [main] INFO  com.phonebook.core.TestBase -- Start test: loginWithWrongPasswordTest with data [AuthRequestDto(username=leno@gmail.com, password=bernd1234$)]
+12:33:04.892 [main] INFO  com.phonebook.core.TestBase -- PASSED: loginWithWrongPasswordTest
+12:33:04.892 [main] INFO  com.phonebook.core.TestBase -- ==================================
+12:33:04.893 [main] INFO  com.phonebook.core.TestBase -- Start test: loginWithWrongPasswordTest with data [AuthRequestDto(username=leno@gmail.com, password=BERND1234$)]
+12:33:05.886 [main] INFO  com.phonebook.core.TestBase -- PASSED: loginWithWrongPasswordTest
+12:33:05.887 [main] INFO  com.phonebook.core.TestBase -- ==================================
+12:33:05.888 [main] INFO  com.phonebook.core.TestBase -- Start test: loginWithWrongPasswordTest with data [AuthRequestDto(username=leno@gmail.com, password=Bernd12344)]
+12:33:06.796 [main] INFO  com.phonebook.core.TestBase -- PASSED: loginWithWrongPasswordTest
+12:33:06.796 [main] INFO  com.phonebook.core.TestBase -- ==================================
+12:33:06.797 [main] INFO  com.phonebook.core.TestBase -- Start test: loginWithWrongPasswordTest with data [AuthRequestDto(username=leno@gmail.com, password=Иуктв1234$)]
+12:33:07.734 [main] INFO  com.phonebook.core.TestBase -- PASSED: loginWithWrongPasswordTest
+12:33:07.735 [main] INFO  com.phonebook.core.TestBase -- ==================================
+12:33:07.736 [main] INFO  com.phonebook.core.TestBase -- Start test: loginWithWrongPasswordTest with data [AuthRequestDto(username=leno@gmail.com, password=Bernd!@#$$)]
+12:33:08.663 [main] INFO  com.phonebook.core.TestBase -- PASSED: loginWithWrongPasswordTest
+12:33:08.664 [main] INFO  com.phonebook.core.TestBase -- ==================================

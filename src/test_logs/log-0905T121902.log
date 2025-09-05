@@ -1,0 +1,6 @@
+12:19:03.339 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  C:\Users\paxpi\AppData\Local\JetBrains\IdeaIC2024.1\temp-testng-customsuite.xml
+
+12:19:03.424 [main] INFO  com.phonebook.core.TestBase -- Start test: addContactWithoutNameTest with data []
+12:19:07.900 [main] INFO  com.phonebook.core.TestBase -- PASSED: addContactWithoutNameTest
+12:19:07.900 [main] INFO  com.phonebook.core.TestBase -- ==================================

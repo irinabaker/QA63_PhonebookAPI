@@ -4,29 +4,18 @@ import com.phonebook.core.TestBase;
 import com.phonebook.dto.AuthRequestDto;
 import com.phonebook.dto.AuthResponseDto;
 import com.phonebook.dto.ErrorDto;
-import io.restassured.http.ContentType;
+import com.phonebook.utils.MyDataProvider;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static io.restassured.RestAssured.given;
+import static com.phonebook.data.ObjectsData.auth;
 import static org.hamcrest.Matchers.equalTo;
 
 public class LoginTests extends TestBase {
 
-    AuthRequestDto auth = AuthRequestDto.builder()
-            .username("leno@gmail.com")
-            .password("Bernd1234$")
-            .build();
-
     @Test
     public void loginSuccessTest() {
-
-        AuthResponseDto token = given()
-                .contentType(ContentType.JSON)
-                .body(auth)
-                .when()
-                .post("user/login/usernamepassword")
-                .then()
+        AuthResponseDto token = app.getUser().login(auth)
                 .assertThat().statusCode(200)
                 .extract().response().as(AuthResponseDto.class);
         System.out.println(token.getToken());
@@ -34,29 +23,16 @@ public class LoginTests extends TestBase {
 
     @Test
     public void loginSuccessTest2() {
-        String token = given()
-                .contentType(ContentType.JSON)
-                .body(auth)
-                .post("user/login/usernamepassword")
-                .then()
+        String token = app.getUser().login(auth)
                 .assertThat().statusCode(200)
                 .extract().path("token");
-        System.out.println(token);
+       System.out.println(token);
     }
 
     //assert with TestNG
-    @Test
-    public void loginWithWrongPasswordTest() {
-        ErrorDto errorDto =
-                given()
-                .body(AuthRequestDto.builder()
-                        .username("leno@gmail.com")
-                        .password("bernd1234$")
-                        .build())
-                .contentType(ContentType.JSON)
-                .when()
-                .post("user/login/usernamepassword")
-                .then()
+    @Test(dataProviderClass = MyDataProvider.class,dataProvider = "addNewContactFromCsv")
+    public void loginWithWrongPasswordTest(AuthRequestDto authRequestDto) {
+        ErrorDto errorDto = app.getUser().login(authRequestDto)
                 .assertThat().statusCode(401)
                .extract().response().as(ErrorDto.class);
 
@@ -68,16 +44,10 @@ public class LoginTests extends TestBase {
     //assert with RestAssured
     @Test
     public void loginWithWrongPasswordTest2() {
-
-        given()
-                .body(AuthRequestDto.builder()
-                        .username("leno@gmail.com")
-                        .password("bernd1234$")
-                        .build())
-                .contentType(ContentType.JSON)
-                .when()
-                .post("user/login/usernamepassword")
-                .then()
+        app.getUser().login(AuthRequestDto.builder()
+                .username("leno@gmail.com")
+                .password("bernd1234$")
+                .build())
                 .assertThat().statusCode(401)
                 .assertThat().body("message",equalTo("Login or Password incorrect"));
     }

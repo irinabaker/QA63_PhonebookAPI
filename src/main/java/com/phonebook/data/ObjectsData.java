@@ -1,5 +1,6 @@
 package com.phonebook.data;
 
+import com.phonebook.dto.AuthRequestDto;
 import com.phonebook.dto.ContactDto;
 
 public class ObjectsData {
@@ -11,5 +12,10 @@ public class ObjectsData {
             .phone("1234567890")
             .address("Berlin")
             .description("goalkeeper")
+            .build();
+
+    public static AuthRequestDto auth = AuthRequestDto.builder()
+            .username("leno@gmail.com")
+            .password("Bernd1234$")
             .build();
 }

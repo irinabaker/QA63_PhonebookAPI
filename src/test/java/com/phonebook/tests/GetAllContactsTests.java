@@ -3,21 +3,30 @@ package com.phonebook.tests;
 import com.phonebook.core.TestBase;
 import com.phonebook.dto.AllContactsDto;
 import com.phonebook.dto.ContactDto;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static io.restassured.RestAssured.given;
+import static com.phonebook.data.ObjectsData.auth;
 import static org.hamcrest.Matchers.equalTo;
 
 public class GetAllContactsTests extends TestBase {
 
+    String token;
+
+    @BeforeMethod
+    public void preRequest() {
+
+        String responseToken = app.getUser().login(auth)
+                .assertThat().statusCode(200)
+                .extract().path("token");
+
+        token = responseToken;
+    }
+
     @Test
     public void getAllContactsSuccessTest() {
 
-        AllContactsDto contactsDto = given()
-                .header(AUTH, TOKEN)
-                .when()
-                .get("contacts")
-                .then()
+        AllContactsDto contactsDto = app.getContact().getContacts(AUTH, token)
                 .assertThat().statusCode(200)
                 .extract().response().as(AllContactsDto.class);
 
@@ -29,11 +38,7 @@ public class GetAllContactsTests extends TestBase {
 
     @Test
     public void getAllContactsWithInvalidToken() {
-        given()
-                .header(AUTH,"wower98u")
-                .when()
-                .get("contacts")
-                .then()
+        app.getContact().getContacts(AUTH, "wower98u")
                 .assertThat().statusCode(401)
                 .assertThat().body("error",equalTo("Unauthorized"));
     }

@@ -19,8 +19,20 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
     testCompileOnly 'org.projectlombok:lombok:1.18.30'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    implementation 'ch.qos.logback:logback-classic:1.5.18'
 }
 
 test {
     useTestNG()
 }
+
+def registerTask(String taskName, String suitePath) {
+    tasks.register(taskName,Test) {
+        useTestNG() {
+            suites suitePath
+        }
+    }
+}
+
+registerTask('regression','src/test/resources/regression.xml')
