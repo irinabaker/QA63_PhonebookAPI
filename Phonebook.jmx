@@ -107,35 +107,43 @@
           </HeaderManager>
           <hashTree/>
         </hashTree>
-      <SampleSaveConfiguration>
-  <time>true</time>
-  <latency>true</latency>
-  <timestamp>true</timestamp>
-  <success>true</success>
-  <label>true</label>
-  <code>true</code>
-  <message>true</message>  <!-- ЭТА СТРОКА ОБЯЗАТЕЛЬНА -->
-  <threadName>true</threadName>
-  <dataType>true</dataType>
-  <encoding>false</encoding>
-  <assertions>true</assertions>
-  <subresults>true</subresults>
-  <responseData>false</responseData>
-  <samplerData>false</samplerData>
-  <xml>false</xml>
-  <fieldNames>true</fieldNames>
-  <responseHeaders>false</responseHeaders>
-  <requestHeaders>false</requestHeaders>
-  <responseDataOnError>false</responseDataOnError>
-  <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-  <assertionsResultsToSave>0</assertionsResultsToSave>
-  <bytes>true</bytes>
-  <sentBytes>true</sentBytes>
-  <url>true</url>
-  <threadCounts>true</threadCounts>
-  <idleTime>true</idleTime>
-  <connectTime>true</connectTime>
-</SampleSaveConfiguration>
+     JMeter сам создаст корректный <SampleSaveConfiguration> внутри этого Listener. Пример корректного блока внутри JMX:
+
+<ResultCollector guiclass="SimpleDataWriterGui" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+  <stringProp name="filename">results.jtl</stringProp>
+  <objProp>
+    <name>saveConfig</name>
+    <value class="SampleSaveConfiguration">
+      <time>true</time>
+      <latency>true</latency>
+      <timestamp>true</timestamp>
+      <success>true</success>
+      <label>true</label>
+      <code>true</code>
+      <message>true</message>
+      <threadName>true</threadName>
+      <dataType>true</dataType>
+      <encoding>false</encoding>
+      <assertions>true</assertions>
+      <subresults>true</subresults>
+      <responseData>false</responseData>
+      <samplerData>false</samplerData>
+      <xml>false</xml>
+      <fieldNames>true</fieldNames>
+      <responseHeaders>false</responseHeaders>
+      <requestHeaders>false</requestHeaders>
+      <responseDataOnError>false</responseDataOnError>
+      <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+      <assertionsResultsToSave>0</assertionsResultsToSave>
+      <bytes>true</bytes>
+      <sentBytes>true</sentBytes>
+      <url>true</url>
+      <threadCounts>true</threadCounts>
+      <idleTime>true</idleTime>
+      <connectTime>true</connectTime>
+    </value>
+  </objProp>
+</ResultCollector>
         <hashTree/>
       </hashTree>
     </hashTree>
