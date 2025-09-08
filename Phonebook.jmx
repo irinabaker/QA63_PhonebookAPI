@@ -205,7 +205,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">C:\Tools\apache-jmeter-5.6.2\bin\summary.csv</stringProp>
+          <stringProp name="filename">C:\Users\paxpi\.jenkins\workspace\Pipeline_phonebook\results.jtl</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="true">
@@ -279,7 +279,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">C:\Tools\apache-jmeter-5.6.2\bin\sample.csv</stringProp>
+          <stringProp name="filename">C:\Users\paxpi\.jenkins\workspace\Pipeline_phonebook\results.jtl</stringProp>
         </ResultCollector>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login" enabled="true">
