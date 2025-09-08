@@ -107,9 +107,7 @@
           </HeaderManager>
           <hashTree/>
         </hashTree>
-     JMeter сам создаст корректный <SampleSaveConfiguration> внутри этого Listener. Пример корректного блока внутри JMX:
-
-<ResultCollector guiclass="SimpleDataWriterGui" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+    <ResultCollector guiclass="SimpleDataWriterGui" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
   <stringProp name="filename">results.jtl</stringProp>
   <objProp>
     <name>saveConfig</name>
