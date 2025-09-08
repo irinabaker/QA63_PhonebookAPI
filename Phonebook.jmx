@@ -135,7 +135,7 @@
       <connectTime>true</connectTime>
     </value>
   </objProp>
-  <stringProp name="filename">results.jtl</stringProp>
+  <stringProp name="filename">${WORKSPACE}\results.jtl</stringProp>
 </ResultCollector>
         <hashTree/>
       </hashTree>
