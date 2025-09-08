@@ -141,7 +141,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">C:\Users\paxpi\.jenkins\workspace\Pipeline_phonebook\results.jtl</stringProp>
+          <stringProp name="filename">results.jtl</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
