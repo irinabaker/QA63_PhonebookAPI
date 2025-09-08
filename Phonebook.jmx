@@ -164,7 +164,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">C:\Tools\apache-jmeter-5.6.2\bin\sample.csv</stringProp>
+          <stringProp name="filename">C:\Users\paxpi\.jenkins\workspace\Pipeline_phonebook\results.jtl</stringProp>
         </ResultCollector>
         <hashTree/>
         <DurationAssertion guiclass="DurationAssertionGui" testclass="DurationAssertion" testname="Duration Assertion" enabled="true">
